@@ -1,0 +1,52 @@
+2367406568 27375 orb.sh
+1943359300 6858 lib/channels.sh
+2822947349 7906 lib/compat.sh
+410246370 9268 lib/diag.sh
+705277073 14950 lib/discover.sh
+1027460255 8520 lib/engine.sh
+581373278 3772 lib/lock.sh
+1711077838 3807 lib/logging.sh
+1679641002 5296 lib/rman.sh
+3959028056 3175 lib/sqlplus.sh
+2268645283 13976 lib/ui.sh
+993317208 7144 lib/validate.sh
+3317528156 12440 ops/backup.sh
+351255986 9745 ops/backup_health.sh
+678471839 3377 ops/backup_info.sh
+734380019 16420 ops/catalog.sh
+277330105 40609 ops/dataguard.sh
+4068136976 22523 ops/datapump.sh
+1683779745 5372 ops/drill.sh
+4014864890 17203 ops/duplicate.sh
+11423436 19987 ops/flashback.sh
+2883167092 6537 ops/fleet.sh
+4189620510 29406 ops/gridasm.sh
+2684900727 20167 ops/pdb.sh
+1481452128 8664 ops/pitr.sh
+3303838351 18423 ops/postrestore.sh
+2581574277 17020 ops/restore_advanced.sh
+1077118049 14006 ops/restore_database.sh
+4147473433 12336 ops/restore_parts.sh
+1849837520 11591 ops/selftest.sh
+4086998302 28614 ops/tts.sh
+3989255740 12183 ops/validate_backup.sh
+294840911 5236 scripts/orb_sqlcheck.sh
+2389538190 3578 conf/media.conf
+758852004 3470 conf/orb.conf
+2646606702 20628 README.md
+
+# ORACLE RECOVERY BRABO 1.3
+# Conferir apos a transferencia:
+#     cd oracle-recovery-brabo
+#     cksum orb.sh lib/*.sh ops/*.sh scripts/*.sh conf/*.conf README.md
+# Qualquer linha diferente = arquivo corrompido no caminho.
+#
+# Se o pacote passou por Windows, remova os CR ANTES de rodar:
+#     for f in orb.sh lib/*.sh ops/*.sh scripts/*.sh
+#     do
+#         tr -d "\015" < "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+#     done
+#
+# Validacao rapida:
+#     sh scripts/orb_sqlcheck.sh
+#     ./orb.sh --selftest

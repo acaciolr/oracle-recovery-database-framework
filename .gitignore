@@ -1,0 +1,56 @@
+# ---------------------------------------------------------------------------
+# ORACLE RECOVERY BRABO - .gitignore
+#
+# Regra: o repositorio guarda o FRAMEWORK. Nada do que ele PRODUZ.
+# Log de execucao, trilha de auditoria, rundir, script gerado por --generate
+# e saida de RMAN/SQL*Plus contem nome de host, SID, caminho de datafile e
+# as vezes string de conexao. Isso nao vai para o git.
+# ---------------------------------------------------------------------------
+
+# --- saida de execucao -----------------------------------------------------
+logs/*
+!logs/.keep
+run_*/
+*.log
+*.audit
+
+# --- scripts gerados por --generate ---------------------------------------
+# scripts/ e destino do --generate; so o checker versionado fica.
+scripts/*
+!scripts/.keep
+!scripts/orb_sqlcheck.sh
+
+# --- saida de RMAN / SQL*Plus / dgmgrl -------------------------------------
+*.rman
+*.cmdfile
+*.out
+sqlnet.log
+*.trc
+
+# --- empacotamento ---------------------------------------------------------
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.bkp
+*.bkp.zip
+
+# --- config com credencial -------------------------------------------------
+# orb.conf versionado e o exemplo. Se voce puser senha de catalogo nele,
+# copie para orb.local.conf e mantenha fora do git.
+conf/*.local.conf
+conf/orb.conf.local
+
+# --- lixo de editor e SO ---------------------------------------------------
+*~
+*.swp
+*.swo
+*.tmp
+*.bak
+*.orig
+*.rej
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
